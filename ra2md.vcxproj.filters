@@ -120,6 +120,12 @@
     <ClCompile Include="src\IO\SHAPipe.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\Game\Abstract.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\Scenario.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\RawFile.h">
@@ -240,6 +246,15 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="include\SHAPipe.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Abstract.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Defines.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenario.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
