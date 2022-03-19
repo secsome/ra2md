@@ -55,3 +55,36 @@ void Log_Close()
 		MoveFile(LogFile.File_Name(), buffer);
 	}
 }
+
+HANDLE AppMutex;
+bool Setup_Mutex()
+{
+	AppMutex = CreateMutex(nullptr, FALSE, "4D01B245-DAA6-4351-9CD3-C2A172516EB7");
+	if (GetLastError() == ERROR_ALREADY_EXISTS)
+	{
+		HWND hWnd = FindWindow("4D01B245-DAA6-4351-9CD3-C2A172516EB7", nullptr);
+		if (hWnd != NULL)
+		{
+			SetForegroundWindow(hWnd);
+			ShowWindow(hWnd, SW_RESTORE);
+		}
+		if (AppMutex != NULL)
+		{
+			CloseHandle(AppMutex);
+			AppMutex = NULL;
+		}
+		Log_String("RA2MD is already running...Bail!\n");
+		return false;
+	}
+	Log_String("Create AppMutex okay.\n");
+	return true;
+}
+
+void Release_Mutex()
+{
+	if (AppMutex != NULL)
+	{
+		CloseHandle(AppMutex);
+		AppMutex = NULL;
+	}
+}

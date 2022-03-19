@@ -7,12 +7,12 @@
 #include <INI.h>
 #include <TextManager.h>
 #include <MixFile.h>
+#include <Direct2DApp.h>
 
 void Init_Global()
 {
-	extern HINSTANCE hInstance;
 	char filename[_MAX_PATH];
-	GetModuleFileName(static_cast<HMODULE>(hInstance), filename, _MAX_PATH);
+	GetModuleFileName(static_cast<HMODULE>(ProgramInstance), filename, _MAX_PATH);
 	
 	char drive[_MAX_DRIVE];
 	char dir[_MAX_PATH];
@@ -96,5 +96,36 @@ void Init_Language()
 		char buffer[20];
 		sprintf(buffer, "stringtable%02d.csf", i);
 		TextManagerClass::StringTable.Load(buffer);
+	}
+}
+
+bool Init_Check()
+{
+	Log_String("Init_Check\n");
+
+	if (!GetSystemMetrics(SM_MOUSEPRESENT) || !GetSystemMetrics(SM_CMOUSEBUTTONS))
+	{
+		Log_String("Mouse Required!\n");
+		return false;
+	}
+
+	Log_String("Init_Check done!\n");
+	return true;
+}
+
+void Init_App()
+{
+	HeapSetInformation(NULL, HeapEnableTerminationOnCorruption, nullptr, 0);
+
+	if (SUCCEEDED(CoInitialize(nullptr)))
+	{
+		{
+			Direct2DApp app;
+
+			if (SUCCEEDED(app.Initialize()))
+				app.RunMessageLoop();
+
+		}
+		CoUninitialize();
 	}
 }

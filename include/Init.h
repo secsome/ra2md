@@ -9,3 +9,5 @@ void Init_Random();
 void Init_Keys();
 void Init_MixFiles();
 void Init_Language();
+bool Init_Check();
+void Init_App();

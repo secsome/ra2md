@@ -126,6 +126,9 @@
     <ClCompile Include="src\Game\Scenario.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\Game\Direct2DApp.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\RawFile.h">
@@ -255,6 +258,15 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="include\Scenario.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Direct3D.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Direct2D.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Direct2DApp.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

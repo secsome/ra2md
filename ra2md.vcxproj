@@ -95,6 +95,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\Game\Abstract.cpp" />
+    <ClCompile Include="src\Game\Direct2DApp.cpp" />
     <ClCompile Include="src\Game\Scenario.cpp" />
     <ClCompile Include="src\IO\SHAPipe.cpp" />
     <ClCompile Include="src\Algorithm\CRC.cpp" />
@@ -135,6 +136,7 @@
   <ItemGroup>
     <ClInclude Include="include\Abstract.h" />
     <ClInclude Include="include\Always.h" />
+    <ClInclude Include="include\Direct2DApp.h" />
     <ClInclude Include="include\Base64.h" />
     <ClInclude Include="include\Base64Pipe.h" />
     <ClInclude Include="include\Base64Straw.h" />
@@ -150,6 +152,8 @@
     <ClInclude Include="include\Conquer.h" />
     <ClInclude Include="include\CRC.h" />
     <ClInclude Include="include\Defines.h" />
+    <ClInclude Include="include\Direct2D.h" />
+    <ClInclude Include="include\Direct3D.h" />
     <ClInclude Include="include\File.h" />
     <ClInclude Include="include\FilePipe.h" />
     <ClInclude Include="include\FileStraw.h" />
