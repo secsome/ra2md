@@ -94,12 +94,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Algorithm\LZO1X_D.cpp" />
+    <ClCompile Include="src\Algorithm\LZO1X_C.cpp" />
     <ClCompile Include="src\Game\Abstract.cpp" />
     <ClCompile Include="src\Game\Direct2DApp.cpp" />
     <ClCompile Include="src\Game\Scenario.cpp" />
+    <ClCompile Include="src\IO\LZOStraw.cpp" />
     <ClCompile Include="src\IO\SHAPipe.cpp" />
     <ClCompile Include="src\Algorithm\CRC.cpp" />
-    <ClCompile Include="src\IO\Base64.cpp" />
+    <ClCompile Include="src\Algorithm\Base64.cpp" />
     <ClCompile Include="src\IO\Base64Pipe.cpp" />
     <ClCompile Include="src\IO\Base64Straw.cpp" />
     <ClCompile Include="src\IO\BufferPipe.cpp" />
@@ -159,6 +162,10 @@
     <ClInclude Include="include\FileStraw.h" />
     <ClInclude Include="include\INI.h" />
     <ClInclude Include="include\Init.h" />
+    <ClInclude Include="include\LZO.h" />
+    <ClInclude Include="include\LZO1X.h" />
+    <ClInclude Include="include\LZOConfig.h" />
+    <ClInclude Include="include\LZOStraw.h" />
     <ClInclude Include="include\RAMFile.h" />
     <ClInclude Include="include\ReadLine.h" />
     <ClInclude Include="include\Scenario.h" />

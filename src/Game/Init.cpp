@@ -83,6 +83,10 @@ void Init_MixFiles()
 
 	new MFCD("RA2.MIX", &PKey::FastKey);
 	new MFCD("RA2MD.MIX", &PKey::FastKey);
+	new MFCD("CACHE.MIX", &PKey::FastKey);
+	new MFCD("CACHEMD.MIX", &PKey::FastKey);
+	new MFCD("LOCALMD.MIX", &PKey::FastKey);
+	new MFCD("LOCAL.MIX", &PKey::FastKey);
 }
 
 void Init_Language()
@@ -96,6 +100,14 @@ void Init_Language()
 		char buffer[20];
 		sprintf(buffer, "stringtable%02d.csf", i);
 		TextManagerClass::StringTable.Load(buffer);
+	}
+
+	CCFileClass ccfile("rulesmd.ini");
+	if (ccfile.Open())
+	{
+		INIClass ini;
+		ini.Load(ccfile);
+		int x = ini.Get_Int("E1", "Cost");
 	}
 }
 

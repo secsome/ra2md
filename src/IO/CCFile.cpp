@@ -143,7 +143,10 @@ int CCFileClass::Size()
 
 int CCFileClass::Write(void* const buffer, int size)
 {
-	return 0;
+	if (Is_Resident())
+		Error(EACCES, false, File_Name());
+
+	return BufferIOFileClass::Write(buffer, size);
 }
 
 void CCFileClass::Close()

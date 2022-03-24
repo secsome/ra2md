@@ -281,6 +281,7 @@ HRESULT Direct2DApp::OnRender()
             rtSize.height / 2 + 100.0f
         );
 
+        
         // Draw a filled rectangle.
         m_pRenderTarget->FillRectangle(&rectangle1, m_pLightSlateGrayBrush);
 
